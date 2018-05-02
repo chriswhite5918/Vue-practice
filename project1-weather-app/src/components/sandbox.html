@@ -1,0 +1,38 @@
+<input type="search" v-model="input" @keyup.enter="confirmSearch" class="center">
+
+
+<a class="weatherwidget-io" href="https://forecast7.com/en/30d94118d76/xuancheng/" data-label_1="XUANCHENG" data-label_2="WEATHER"
+    data-theme="clear" data-basecolor="rgba(255, 255, 255, 0.9)" data-accent="rgba(255, 255, 255, 0.09)">XUANCHENG WEATHER</a>
+
+<script>
+    !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = 'https://weatherwidget.io/js/widget.min.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'weatherwidget-io-js');
+</script>
+
+<transition name="slide" mode="out-in">
+    <ul class="collection with-header" v-if="searchFnished">
+        <li class="collection-header weather-display">
+            <h5>今天</h5>
+        </li>
+        <li class="collection-item weather-display">{{weatherOne.text_day}}</li>
+        <li class="collection-item weather-display">白天最高气温 {{weatherOne.high}} 摄氏度</li>
+        <li class="collection-item weather-display">夜间最低气温 {{weatherOne.low}} 摄氏度</li>
+        <li class="collection-item weather-display">---</li>
+        <li class="collection-header weather-display">
+            <h5>明天</h5>
+        </li>
+        <li class="collection-item weather-display">{{weatherTwo.text_day}}</li>
+        <li class="collection-item weather-display">白天最高气温 {{weatherTwo.high}} 摄氏度</li>
+        <li class="collection-item weather-display">夜间最低气温 {{weatherTwo.low}} 摄氏度</li>
+        <li class="collection-item weather-display">---</li>
+        <li class="collection-header weather-display">
+            <h5>后天</h5>
+        </li>
+        <li class="collection-item weather-display">{{weatherThree.text_day}}</li>
+        <li class="collection-item weather-display">白天最高气温 {{weatherThree.high}} 摄氏度</li>
+        <li class="collection-item weather-display">夜间最低气温 {{weatherThree.low}} 摄氏度</li>
+        <li class="collection-item weather-display">---</li>
+    </ul>
+</transition>
+
+
+<img src="../assets/3d_180/0.png" alt="">
