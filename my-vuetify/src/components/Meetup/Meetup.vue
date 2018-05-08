@@ -23,10 +23,13 @@
 
 <script>
     export default {
-        props: ['id'],
+        // Using props#1
+        // props: ['id']
         computed: {
             meetup() {
-                return this.$store.getters.loadedMeetup(this.id)
+                // Using props#2
+                // return this.$store.getters.loadedMeetup(this.id)
+                return this.$store.getters.loadedMeetup(this.$route.params.id)
             }
         }
     }
